@@ -32,7 +32,7 @@ namespace Day22_Annotations
 
 			foreach (MethodInfo method in methods)
 			{
-				Console.WriteLine(method.Name);
+				Console.WriteLine(method.Name);//it will prit each method we are using
 			}
 
 			// for loop to read through all methods 
@@ -44,7 +44,10 @@ namespace Day22_Annotations
 				// method attributes returned 
 				// by the GetCustomAttributes method 
 
-				object[] attributesArray = methods[i].GetCustomAttributes(true);
+				object[] attributesArray = methods[i].GetCustomAttributes(true);//getcustomattribute method it will
+																				//returns all teh custom attributes
+																				//applied for that methdo
+
 
 				// foreach loop to read through 
 				// all attributes of the method 
@@ -59,7 +62,9 @@ namespace Day22_Annotations
 						{
 							Console.WriteLine("Applying Custom Attribute on methods");
 							Console.WriteLine("{0} - {1}, {2} ", methods[i].Name,
-							attributeObject.Tittle, attributeObject.Description);
+							attributeObject.Tittle, attributeObject.Description);//here we are dispalyign the the title and
+																				 //description of all the methods which are
+																				 //having custom attributes
 						}
 					}
 				}

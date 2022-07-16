@@ -13,30 +13,29 @@ namespace Day22_Annotations
     {
         public static void Main(string[] args)
         {
-            //MoodAnalyser mood = new MoodAnalyser();
-            //mood.Test();
-            //TypesOfExceptions.TestNullReferenceException(null);
-            //Console.WriteLine("Welcome");
-            //TestAssemblyUsingReflection();
+           
             Author author = new Author();
             author.FirstName = "Kavitha";
             author.LastName = "NSK";
             author.Age = 25;
             author.Email = "abc@gmail.com";
             author.Phone = "8233042356";
-            ValidateAuthorObject(author);
+            ValidateAuthorObject(author);//go inside the validateauthor method
             CustomAttribute.AttributeDisplay(typeof(MoodAnalyser));
-            //string assemblyPath = @"C:\Users\Pavithra N S\source\repos\DatastructureDemo131Batch\DatastructureDemo131Batch\bin\Debug\DatastructureDemo131Batch.exe";
-            //TestAssemblyUsingReflection(assemblyPath);
+            
             Console.ReadLine();
         }
 
         public static void ValidateAuthorObject(Author author)
         {
-            ValidationContext context = new ValidationContext(author);
+            ValidationContext context = new ValidationContext(author);//it will describe the which context to be validates
             List<ValidationResult> list = new List<ValidationResult>();
-            bool res = Validator.TryValidateObject(author, context, list, true);
-            if (!res)
+            bool res = Validator.TryValidateObject(author, context, list, true);//validator it is used as
+                                                                                //a helper class to
+                                                                                //validate the object, properties,methods
+                                                                                //to validate the attributes
+                                                                                //returns the boolean type true or false
+            if (!res)//if it is false it will display the error message 
             {
                 foreach (ValidationResult result in list)
                 {
@@ -49,7 +48,7 @@ namespace Day22_Annotations
 
         public static void TestAssemblyUsingReflection(string path)
         {
-            //string path = @"C:\Users\Pavithra N S\source\repos\DatastructureDemo131Batch\DatastructureDemo131Batch\bin\Debug\DatastructureDemo131Batch.exe";
+            
             Assembly assembly = Assembly.LoadFrom(path);
             if (assembly != null)
             {
